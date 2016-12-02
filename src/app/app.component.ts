@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 
-@Component({
+@Component({    
     selector: 'app',
     template: `
             <div>
@@ -8,6 +8,4 @@ import { Component } from '@angular/core'
             </div> 
           `
 })
-export class App{
-
-}
+export class AppComponent {}
