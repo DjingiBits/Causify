@@ -18,40 +18,33 @@
 
 <body>
 <div class="wrapper">
-    <header>
-        <nav>
-            <img src="" alt="">
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </nav>
-    </header>
+        <h1 class="big-title">Welcome to Causify!</h1>
+        <h3 class="intro-text">What would you like to do?</h3>
 
-    <main>
-        <div class="popular-causes">
-
+        <div class="switch">
+            <h2 class="option-text">Create a cause</h2>
+            <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox">
+            <label for="cmn-toggle-1"></label>
+            <h2 class="option-text">Support a cause</h2>
         </div>
 
-        <div class="recent-causes">
+        <button class="cta-begin" onclick="promptLogin();">Get Started</button>
 
+        <div id="login-form" class="popup">
+            <h2 class="form-title">Do you have an account with us?</h2>
+            <form>
+                <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Enter username">
+                <input id="password" name="password" value="" type="password" placeholder="Enter password">
+                <button class="login-btn">Log In</button>
+            </form>
+        <a href="#"> Don't have an account? Register now.</a>
         </div>
-
-        <div class="statistics">
-
-        </div>
-
-        <div class="cta">
-
-        </div>
-    </main>
-
-    <footer>
-        <p></p>
-    </footer>
 </div>
+
+<script>
+    function promptLogin(){
+        document.getElementById("#login-form").style.display("block");
+    }
+</script>
 </body>
 </html>
