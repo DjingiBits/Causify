@@ -20,7 +20,9 @@
     "@angular/platform-browser-dynamic": "^2.0.0",
     "@angular/router": "^3.0.0",
     "@angularclass/api": "^1.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.14",
     "core-js": "^2.4.1",
+    "kinvey-angular2-sdk": "^3.1.0",
     "lodash": "^4.16.1",
     "rxjs": "^5.0.0-beta.12",
     "zone.js": "^0.6.25"

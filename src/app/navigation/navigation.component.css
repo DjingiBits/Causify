@@ -1,0 +1,23 @@
+.navigation-bar ul {
+    list-style-type: none;
+    font-size: 26px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+.navigation-bar li {
+    display: inline-block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.navigation-bar li:hover {
+    background-color: #555;
+    color: white;
+}
+.user-settings{
+    float: right;
+}
