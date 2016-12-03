@@ -22,8 +22,8 @@ export class RegisterComponent {
         this.user
             .registerUser(this.userData)
             .subscribe(
-            userInfo => this.saveAuthInSession(userInfo),
-            error => this.errorMessage = <any>error
+                userInfo => this.saveAuthInSession(userInfo),
+                error => this.errorMessage = <any>error
             );
     }
 
