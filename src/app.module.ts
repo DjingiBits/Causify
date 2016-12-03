@@ -10,7 +10,7 @@ import { LoginComponent } from './app/login/login.component'
 import { RegisterComponent } from './app/register/register.component'
 import { CausesComponent } from './app/causes/causes.component'
 import { CreateCauseComponent } from './app/createCause/create-cause.component'
-import { UserService } from './services/user'
+import { UserService } from './services/user.service'
 import { CausesService } from './services/causes.service'
 
 @NgModule({

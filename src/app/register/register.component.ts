@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core'
 //import { FormBuilder, Validators } from '@angular/forms';
-import { UserService } from '../../services/user'
+import { UserService } from '../../services/user.service'
 
 @Component({
     selector: 'register-form',
@@ -8,28 +8,28 @@ import { UserService } from '../../services/user'
     styleUrls: ['app/register/register.component.css']
 })
 export class RegisterComponent {
-
-    @Output() registerUser = new EventEmitter()
-
-   //username: string;
-   //firstName: string;
-   //lastName: string;
-   //password: string;
-   ////confirmPass: string;
-
-     userData = {
+    errorMessage: any
+    userData = {
         username: "",
         firstName: "",
         lastName: "",
         password: "",
         confirmPass: ""
     };
-   constructor(private user: UserService ) {}
+    constructor(private user: UserService) { }
 
     register() {
-        const { username, firstName, lastName , password} = this.userData
-        console.log(this.user.registerUser(this.userData));
-        console.log(event);
-        console.log(JSON.stringify(this.userData));
+        this.user
+            .registerUser(this.userData)
+            .subscribe(
+            userInfo => this.saveAuthInSession(userInfo),
+            error => this.errorMessage = <any>error
+            );
+    }
+
+    saveAuthInSession(userInfo: any) {
+        sessionStorage.setItem("userId", userInfo._id);
+        sessionStorage.setItem("username", userInfo.username);
+        sessionStorage.setItem("authToken", userInfo._kmd.authtoken);
     }
 }
