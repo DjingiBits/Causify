@@ -1,13 +1,14 @@
 import { Component } from '@angular/core'
 import { UserService } from '../../services/user.service'
 import { Router } from '@angular/router'
+import { AppComponent } from '../app.component'
 
 @Component({    
     templateUrl: 'app/login/login.component.html',
     styleUrls: ['app/login/login.component.css']
 })
 export class LoginComponent {
-    constructor(private user: UserService, private router: Router) { }
+    constructor(private user: UserService, private router: Router, private app : AppComponent) { }
 
     errorMessage: any
     loginUserData = {
@@ -22,6 +23,7 @@ export class LoginComponent {
                 userInfo => {
                     this.saveAuthInSession(userInfo)
                     this.router.navigate(['/causes'])
+                    this.app.toggleNavigation()
                 },
                 error => this.errorMessage = <any>error
             );

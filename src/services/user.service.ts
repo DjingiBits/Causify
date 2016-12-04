@@ -18,7 +18,7 @@ export class UserService {
             'Content-Type': 'application/json'
         })
         let options = new RequestOptions({ headers: headers })
-        console.log(options)
+
         return this.http.post(this.dbUrl + '/login', data, options)
             .map((response: Response) => response.json())
             .do(data => console.log('Current user ' + JSON.stringify(data)))
@@ -35,5 +35,18 @@ export class UserService {
         return this.http.post(this.dbUrl, data, options)
             .map((response: Response) => response.json())
             .catch(err => Observable.throw(err))
+    }
+    logoutUser(){
+
+        let headers: Headers = new Headers({
+            'Authorization':  "Kinvey " + sessionStorage.getItem("authToken"),
+            'Content-Type': 'application/json'
+        })
+
+
+        let options = new RequestOptions({ headers:  headers })
+
+        return this.http.post(this.dbUrl + '/_logout', options)
+        
     }
 }

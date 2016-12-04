@@ -12,7 +12,10 @@ export class CausesService {
   // TODO --> get token from Kinvey 
   // Kinvey.appAuthTokenHeaders()
 
+
   private authToken: string = '047208fc-21bd-4b5d-99bc-244aa8be7173.rHvthnazXn65Al4RdTIgVqMlCB4XHtFUjDb8MBTPggk='
+  private headers: Headers = new Headers({})
+
   constructor(private http: Http) { }
 
   getCauses(): Observable<ICause[]> {
