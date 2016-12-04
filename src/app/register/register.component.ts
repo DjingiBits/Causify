@@ -2,8 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core'
 //import { FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service'
 
-@Component({
-    selector: 'register-form',
+@Component({    
     templateUrl: 'app/register/register.component.html',
     styleUrls: ['app/register/register.component.css']
 })

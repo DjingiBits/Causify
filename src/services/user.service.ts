@@ -21,7 +21,6 @@ export class UserService {
 
         return this.http.post(this.dbUrl, data, options)
             .map((response: Response) => response.json())
-            .do(data => console.log('All: ' + JSON.stringify(data)))
             .catch(err => Observable.throw(err))
     }
 }

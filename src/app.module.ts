@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { HttpModule } from '@angular/http'
-import { FormsModule , FormBuilder } from '@angular/forms'
+import { FormsModule, FormBuilder } from '@angular/forms'
+import { RouterModule } from '@angular/router'
+
 import { AppComponent } from './app/app.component'
-import { NavigationComponent } from './app/navigation/navigation.component'
 import { HomeComponent } from './app/home/home.component'
 import { LoginComponent } from './app/login/login.component'
 import { RegisterComponent } from './app/register/register.component'
@@ -13,18 +14,33 @@ import { CreateCauseComponent } from './app/createCause/create-cause.component'
 import { UserService } from './services/user.service'
 import { CausesService } from './services/causes.service'
 
+// TODO --> create PageNotFoundComponent, LOgoutComponent, CauseDetailComponent, Footer
+
 @NgModule({
     declarations: [
         AppComponent,
-        NavigationComponent,
         HomeComponent,
         LoginComponent,
         RegisterComponent,
         CausesComponent,
         CreateCauseComponent
     ],
-    providers: [ FormBuilder, UserService,  CausesService],
-    imports: [BrowserModule, NgbModule.forRoot(), FormsModule, HttpModule ],
-    bootstrap : [AppComponent]
+    providers: [FormBuilder, UserService, CausesService],
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot([
+            { path: 'home', component: HomeComponent },
+            { path: 'login', component: LoginComponent },
+            { path: 'register', component: RegisterComponent },
+            { path: 'causes', component: CausesComponent },
+            { path: 'createCuase', component: CreateCauseComponent },
+            { path: '', redirectTo: 'home', pathMatch: 'full' },
+            { path: '**', redirectTo: 'home', pathMatch: 'full' },
+        ]),
+        NgbModule.forRoot(),
+        FormsModule,
+        HttpModule
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

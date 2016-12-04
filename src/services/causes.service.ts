@@ -11,7 +11,7 @@ export class CausesService {
   private dbUrl: string = Kinvey.baseUrl + 'appdata/' + Kinvey.appKey + '/causes'
   // TODO --> get token from Kinvey 
   // Kinvey.appAuthTokenHeaders()
-  private authToken: string = '97f73148-71c4-4fb6-9341-9e2ab12c2842.9MF3sfrcAU1pqKI8Cx7ALjwfjoqyarAt155+yXHIJjs='
+  private authToken: string = '047208fc-21bd-4b5d-99bc-244aa8be7173.rHvthnazXn65Al4RdTIgVqMlCB4XHtFUjDb8MBTPggk='
   private headers: Headers = new Headers({})
 
   constructor(private http: Http) { }
@@ -23,7 +23,6 @@ export class CausesService {
 
     return this.http.get(this.dbUrl, options)
         .map((response: Response) => <ICause[]>response.json())
-        .do(data => console.log('All: ' + JSON.stringify(data)))
         .catch(this.handleError)
   }
   postCause(data) {
