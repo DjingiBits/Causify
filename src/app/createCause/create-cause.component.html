@@ -1,44 +1,34 @@
 <form (ngSubmit)="createCause()">
   <div>
     <label>Tilte:</label>
-    <!--[(nhModule)]="title"-->
-    <input type="text" [(ngModel)]="causeData.title"
-           name = "title" placeholder="Cause Title" required/>
+    <input type="text" [(ngModel)]="causeData.title" name="title" placeholder="Cause Title" required/>
   </div>
 
   <div>
     <label>Image:</label>
-    <!--[(nhModule)]="imageUrl"-->
-    <input type="text" [(ngModel)]="causeData.imageUrl"
-           name = "title"  placeholder="Image Url" required/>
+    <input type="text" [(ngModel)]="causeData.imageUrl" name="title" placeholder="Image Url" required/>
   </div>
 
   <div>
     <label>Description:</label>
-    <!--[(nhModule)]="description"-->
-    <textarea cols="30" rows="10" [(ngModel)]="causeData.description"
-              name = "title"  placeholder="Cause description" required></textarea>
+    <textarea cols="30" rows="10" [(ngModel)]="causeData.description" name="title" placeholder="Cause description" required></textarea>
   </div>
 
   <div>
     <label>Duration:</label>
-    <!--[(nhModule)]="duration"-->
-    <input type="text"  [(ngModel)]="causeData.duration"
-           name = "title" placeholder="Duration" required/>
+    <select>
+        <option *ngFor="let key of durations" [value]="key" [label]="posibleDurations[key]"></option>
+      </select>
   </div>
 
   <div>
     <label>Start date:</label>
-    <!--[(nhModule)]="startDate"-->
-    <input type="text"  [(ngModel)]="causeData.startDate"
-           name = "title"  placeholder="Cause Start date" required/>
+    <input type="text" [(ngModel)]="causeData.startDate" name="title" placeholder="Cause Start date" required/>
   </div>
 
   <div>
     <label>Category:</label>
-    <!--[(nhModule)]="category"+-->
-    <input type="text"  [(ngModel)]="causeData.category"
-           name = "title"  placeholder="Cause Category" required/>
+    <input type="text" [(ngModel)]="causeData.category" name="title" placeholder="Cause Category" required/>
   </div>
   <input type="submit" value="Create Cause">
 </form>
