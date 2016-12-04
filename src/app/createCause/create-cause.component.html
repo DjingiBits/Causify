@@ -28,7 +28,9 @@
 
   <div>
     <label>Category:</label>
-    <input type="text" [(ngModel)]="causeData.category" name="title" placeholder="Cause Category" required/>
+    <select>
+        <option *ngFor="let key of categories" [value]="key" [label]="posibleCategories[key]" ></option>
+      </select>
   </div>
   <input type="submit" value="Create Cause">
 </form>

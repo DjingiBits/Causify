@@ -1,4 +1,5 @@
 import { DurationEnum } from '../enums/DurationEnum';
+import { CategoriesEnum } from '../enums/CategoriesEnum'
 
 export interface ICause {
   _id: string;
@@ -8,7 +9,7 @@ export interface ICause {
   duration: DurationEnum;
   author: string;
   startDate: string; // bootstrap datetimepicker Date?
-  category: string; // TODO Enumeration --> Animals, Education, Children, Culture, Homeless ...
+  category: CategoriesEnum; 
 }
 
 export class Cause implements ICause {
@@ -19,7 +20,7 @@ export class Cause implements ICause {
   duration: DurationEnum;
   author: string;
   startDate: string;
-  category: string;
+  category: CategoriesEnum;
 
   constructor(
     title: string,
@@ -28,7 +29,7 @@ export class Cause implements ICause {
     duration: DurationEnum,
     author: string,
     startDate: string,
-    category: string
+    category: CategoriesEnum
   ) {
     this.title = title;
     this.imageUrl = imageUrl;
