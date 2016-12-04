@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core'
 import { IComment } from './Comment'
 import { CommentsService } from '../../services/comments.service'
+import { Router } from '@angular/router'
 
 @Component({
     selector : 'comment-box',
@@ -19,7 +20,7 @@ export class CommentComponent {
         content: ""
     };
 
-    constructor(commentService: CommentsService) {
+    constructor(commentService: CommentsService, private router: Router) {
         this.commentService = commentService
     }
 
@@ -30,8 +31,11 @@ export class CommentComponent {
         this.commentData['causeId'] = this.causeId
         this.commentService.postComment(this.commentData)
             .subscribe(
-                () => console.log('Comment created'),
-                error => this.errorMessage = <any>error
+                () => {
+                    console.log('Comment created')
+                        this.router.navigate(['/cause'])
+                },
+                        error => this.errorMessage = <any>error
             );
 
     }
