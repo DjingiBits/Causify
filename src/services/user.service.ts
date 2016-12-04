@@ -9,7 +9,6 @@ import { Kinvey } from './Kinvey'
 @Injectable()
 export class UserService {
     private dbUrl = Kinvey.baseUrl + 'user/' + Kinvey.appKey
-
     constructor(private http: Http) { }
 
     loginUser(data) {
@@ -36,17 +35,21 @@ export class UserService {
             .map((response: Response) => response.json())
             .catch(err => Observable.throw(err))
     }
-    logoutUser(){
-
+    logoutUser() {
         let headers: Headers = new Headers({
-            'Authorization':  "Kinvey " + sessionStorage.getItem("authToken"),
+            'Authorization': "Kinvey " + sessionStorage.getItem("authToken"),
             'Content-Type': 'application/json'
         })
 
+        let options = new RequestOptions({ headers: headers })
+        return this.http.post(this.dbUrl + '/_logout', '', options)
+            .map((response: Response) => response.json())
+            .catch(err => Observable.throw(err))
+    }
 
-        let options = new RequestOptions({ headers:  headers })
-
-        return this.http.post(this.dbUrl + '/_logout', options)
-        
+    saveAuthInSession(userInfo: any) {
+        sessionStorage.setItem("userId", userInfo._id);
+        sessionStorage.setItem("username", userInfo.username);
+        sessionStorage.setItem("authToken", userInfo._kmd.authtoken);
     }
 }

@@ -16,17 +16,17 @@ export class CreateCauseComponent {
     duration: "",
     startDate: "",
     category: "",
+    author: ""
   };
 
   constructor(private cause: CausesService, private router : Router) { }
 
   createCause() {
-    const { title, imageUrl, description, duration, startDate, category} = this.causeData
+    this.causeData.author = sessionStorage.getItem('username')
     this.cause.postCause(this.causeData)
         .subscribe(
             () => this.router.navigate(['/causes']),
             error => this.errorMessage = <any>error
         );
-
   }
 }

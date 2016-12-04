@@ -8,7 +8,7 @@ import { AppComponent } from '../app.component'
     styleUrls: ['app/login/login.component.css']
 })
 export class LoginComponent {
-    constructor(private user: UserService, private router: Router, private app : AppComponent) { }
+    constructor(private userService: UserService, private router: Router, private app : AppComponent) { }
 
     errorMessage: any
     loginUserData = {
@@ -17,21 +17,15 @@ export class LoginComponent {
     };
 
     login() {
-        this.user
+        this.userService
             .loginUser(this.loginUserData)
             .subscribe(
                 userInfo => {
-                    this.saveAuthInSession(userInfo)
+                    this.userService.saveAuthInSession(userInfo)
                     this.router.navigate(['/causes'])
                     this.app.toggleNavigation()
                 },
                 error => this.errorMessage = <any>error
             );
-    }
-
-    saveAuthInSession(userInfo: any) {
-        sessionStorage.setItem("userId", userInfo._id);
-        sessionStorage.setItem("username", userInfo.username);
-        sessionStorage.setItem("authToken", userInfo._kmd.authtoken);
     }
 }

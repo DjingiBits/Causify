@@ -19,8 +19,6 @@ import { UserService } from './services/user.service'
 import { CausesService } from './services/causes.service'
 import { CausesMapComponent } from  './app/causesMap/causesMap.component'
 
-// TODO --> create LOgoutComponent, CauseDetailComponent, Footer
-
 @NgModule({
     declarations: [
         AppComponent,
