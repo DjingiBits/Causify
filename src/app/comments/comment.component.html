@@ -1,0 +1,16 @@
+<div>
+    <div class="comment-box" *ngFor="let comment of comments">
+        <p class="comment-content">COMMENT : {{comment.content}}</p>
+        <p>AUTHOR : {{comment.author}}</p>
+    </div>
+
+<form (ngSubmit)="addComment()" id="comment-form">
+    <div>
+        <textarea rows="10" [(ngModel)]="commentData.content" name="comment" id="comment" placeholder="Comment"></textarea>
+    </div>
+    <div>
+        <input type="submit" value="Add Comment">
+    </div>
+</form>
+
+</div>

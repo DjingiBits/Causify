@@ -8,6 +8,8 @@
     <p>{{cause.startDate}}</p>
     <p>{{cause.author}}</p>    
   </div>
+  <comment-box [causeId]="cause._id"> </comment-box>
+
   <input type="button" value="Back" (click)="onBack()">
   <!--TODO add comments-->
 </div>

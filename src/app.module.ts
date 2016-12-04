@@ -14,10 +14,13 @@ import { CausesComponent } from './app/causes/causes.component'
 import { DetailCauseComponent } from './app/detailCause/detail-cause.component'
 import { CreateCauseComponent } from './app/createCause/create-cause.component'
 import { PageNotFoundComponent } from './app/pageNotFound/page-not-found.component'
+import { CausesMapComponent } from  './app/causesMap/causesMap.component'
+import { CommentComponent } from './app/comments/comment.component'
 import { FooterComponent } from './app/footer/footer.component'
 import { UserService } from './services/user.service'
 import { CausesService } from './services/causes.service'
-import { CausesMapComponent } from  './app/causesMap/causesMap.component'
+import { CommentsService } from './services/comments.service'
+
 
 @NgModule({
     declarations: [
@@ -30,9 +33,10 @@ import { CausesMapComponent } from  './app/causesMap/causesMap.component'
         CreateCauseComponent,
         PageNotFoundComponent,
         FooterComponent,
-        CausesMapComponent
+        CausesMapComponent,
+        CommentComponent
     ],
-    providers: [FormBuilder, UserService, CausesService],
+    providers: [FormBuilder, UserService, CausesService, CommentsService],
     imports: [
         BrowserModule,
         RouterModule.forRoot([
