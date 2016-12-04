@@ -21,7 +21,11 @@ export class AppComponent {
     logout() {
         this.user.logoutUser()
             .subscribe(
-            () => this.router.navigate(['/home']),
+            () => {
+                this.router.navigate(['/home'])
+                sessionStorage.clear()
+                this.toggleNavigation()
+            },
             error => console.log(error.json())
             );
     }
