@@ -11,6 +11,7 @@ import { LoginComponent } from './app/login/login.component'
 import { RegisterComponent } from './app/register/register.component'
 import { CausesComponent } from './app/causes/causes.component'
 import { CreateCauseComponent } from './app/createCause/create-cause.component'
+import { PageNotFoundComponent } from './app/pageNotFound/page-not-found.component'
 import { UserService } from './services/user.service'
 import { CausesService } from './services/causes.service'
 
@@ -23,7 +24,8 @@ import { CausesService } from './services/causes.service'
         LoginComponent,
         RegisterComponent,
         CausesComponent,
-        CreateCauseComponent
+        CreateCauseComponent,
+        PageNotFoundComponent
     ],
     providers: [FormBuilder, UserService, CausesService],
     imports: [
@@ -35,7 +37,7 @@ import { CausesService } from './services/causes.service'
             { path: 'causes', component: CausesComponent },
             { path: 'createCuase', component: CreateCauseComponent },
             { path: '', redirectTo: 'home', pathMatch: 'full' },
-            { path: '**', redirectTo: 'home', pathMatch: 'full' },
+            { path: '**', component: PageNotFoundComponent },
         ]),
         NgbModule.forRoot(),
         FormsModule,
