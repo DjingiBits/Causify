@@ -1,6 +1,6 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core'
-//import { FormBuilder, Validators } from '@angular/forms';
+import { Component } from '@angular/core'
 import { UserService } from '../../services/user.service'
+import { Router } from '@angular/router'
 
 @Component({    
     templateUrl: 'app/register/register.component.html',
@@ -15,13 +15,16 @@ export class RegisterComponent {
         password: "",
         confirmPass: ""
     };
-    constructor(private user: UserService) { }
+    constructor(private user: UserService, private router : Router) { }
 
     register() {
         this.user
             .registerUser(this.userData)
             .subscribe(
-                userInfo => this.saveAuthInSession(userInfo),
+                userInfo => {
+                    this.saveAuthInSession(userInfo)
+                    this.router.navigate(['/causes'])
+                },
                 error => this.errorMessage = <any>error
             );
     }
