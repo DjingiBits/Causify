@@ -1,0 +1,22 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #333;
+    width: 100%;
+    border-top: 5px solid #eee;
+    box-shadow: 10px -10px 10px #aaa;
+    height: 50px;
+}
+footer p{
+    text-align: center;
+    color: white;
+}
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+footer a:hover {
+    color: #ffa000;
+    transform:skewY(7deg);
+}

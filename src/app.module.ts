@@ -4,6 +4,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { HttpModule } from '@angular/http'
 import { FormsModule, FormBuilder } from '@angular/forms'
 import { RouterModule } from '@angular/router'
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 import { AppComponent } from './app/app.component'
 import { HomeComponent } from './app/home/home.component'
@@ -13,8 +14,10 @@ import { CausesComponent } from './app/causes/causes.component'
 import { DetailCauseComponent } from './app/detailCause/detail-cause.component'
 import { CreateCauseComponent } from './app/createCause/create-cause.component'
 import { PageNotFoundComponent } from './app/pageNotFound/page-not-found.component'
+import { FooterComponent } from './app/footer/footer.component'
 import { UserService } from './services/user.service'
 import { CausesService } from './services/causes.service'
+import { CausesMapComponent } from  './app/causesMap/causesMap.component'
 
 // TODO --> create LOgoutComponent, CauseDetailComponent, Footer
 
@@ -27,7 +30,9 @@ import { CausesService } from './services/causes.service'
         CausesComponent,
         DetailCauseComponent,
         CreateCauseComponent,
-        PageNotFoundComponent
+        PageNotFoundComponent,
+        FooterComponent,
+        CausesMapComponent
     ],
     providers: [FormBuilder, UserService, CausesService],
     imports: [
@@ -39,12 +44,16 @@ import { CausesService } from './services/causes.service'
             { path: 'causes', component: CausesComponent },
             { path: 'cause/:_id', component: DetailCauseComponent },
             { path: 'createCuase', component: CreateCauseComponent },
+            { path: 'causesMap', component: CausesMapComponent},
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: '**', component: PageNotFoundComponent },
         ]),
         NgbModule.forRoot(),
         FormsModule,
-        HttpModule
+        HttpModule,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyCClQpuyQJkYrlBMl5wMKp7ZpeDrYmXPIo'
+        })
     ],
     bootstrap: [AppComponent]
 })
