@@ -1,12 +1,14 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core'
-//import { FormBuilder, Validators } from '@angular/forms';
+import { Component } from '@angular/core'
 import { UserService } from '../../services/user.service'
+import { Router } from '@angular/router'
+import { AppComponent } from '../app.component'
 
 @Component({    
     templateUrl: 'app/register/register.component.html',
     styleUrls: ['app/register/register.component.css']
 })
 export class RegisterComponent {
+
     errorMessage: any
     userData = {
         username: "",
@@ -15,20 +17,18 @@ export class RegisterComponent {
         password: "",
         confirmPass: ""
     };
-    constructor(private user: UserService) { }
+    constructor(private userService: UserService, private router : Router, private app: AppComponent) { }
 
     register() {
-        this.user
+        this.userService
             .registerUser(this.userData)
             .subscribe(
-                userInfo => this.saveAuthInSession(userInfo),
+                userInfo => {
+                    this.userService.saveAuthInSession(userInfo)
+                    this.router.navigate(['/causes'])
+                    this.app.toggleNavigation()
+                },
                 error => this.errorMessage = <any>error
             );
-    }
-
-    saveAuthInSession(userInfo: any) {
-        sessionStorage.setItem("userId", userInfo._id);
-        sessionStorage.setItem("username", userInfo.username);
-        sessionStorage.setItem("authToken", userInfo._kmd.authtoken);
     }
 }

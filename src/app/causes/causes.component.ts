@@ -21,6 +21,6 @@ export class CausesComponent implements OnInit {
     .subscribe(
       causes => this.causes = causes,
       error => this.errorMessage = <any>error
-    );
+    );    
   }
 }

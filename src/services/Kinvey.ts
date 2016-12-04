@@ -8,6 +8,8 @@ export class Kinvey {
   }
 
   public static appAuthTokenHeaders() {
+    console.log(sessionStorage.getItem("authToken"))
     return "Kinvey " + sessionStorage.getItem("authToken")
+
   }
 }

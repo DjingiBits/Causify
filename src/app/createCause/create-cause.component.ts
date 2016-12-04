@@ -1,5 +1,6 @@
-import { Component, Output, EventEmitter } from '@angular/core'
+import { Component } from '@angular/core'
 import { CausesService } from '../../services/causes.service'
+import { Router } from '@angular/router'
 
 @Component({
   templateUrl: 'app/createCause/create-cause.component.html',
@@ -7,8 +8,7 @@ import { CausesService } from '../../services/causes.service'
 })
 export class CreateCauseComponent {
 
-  @Output() postCause = new EventEmitter()
-
+  errorMessage: any
   causeData = {
     title: "",
     imageUrl: "",
@@ -16,16 +16,17 @@ export class CreateCauseComponent {
     duration: "",
     startDate: "",
     category: "",
+    author: ""
   };
 
-  constructor(private cause: CausesService) { }
+  constructor(private cause: CausesService, private router : Router) { }
 
   createCause() {
-    const { title, imageUrl, description, duration, startDate, category} = this.causeData
+    this.causeData.author = sessionStorage.getItem('username')
     this.cause.postCause(this.causeData)
-      .subscribe(causeData => console.log(causeData));
-    console.log(event);
-    console.log(JSON.stringify(this.causeData));
-
+        .subscribe(
+            () => this.router.navigate(['/causes']),
+            error => this.errorMessage = <any>error
+        );
   }
 }
