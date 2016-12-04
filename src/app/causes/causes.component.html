@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <div class="cause-component" *ngFor="let cause of causes">
+    <h3 class="cause-title">{{cause.title}}</h3>
+    <p>{{cause.category}}</p>
+    <img [src]="cause.imageUrl" [alt]="cause.title" [title]="cause.title"/>
+    <p class="cause-description">{{cause.description}}</p>
+    <p>{{cause.duration}}</p>
+    <p>{{cause.startDate}}</p>
+    <p>{{cause.author}}</p>    
+  </div>
+</div>

@@ -6,8 +6,8 @@ var config = {
   devtool: 'source-map',
   entry: {
     polyfills: './src/polyfills',
-    vendor:    './src/vendor',
-    main:      './src/main'
+    vendor: './src/vendor',
+    main: './src/main'
   },
 
   output: {
@@ -18,10 +18,10 @@ var config = {
   },
   module: {
     loaders: [
-      { test: /\.ts$/,   loader: 'awesome-typescript-loader' },
+      { test: /\.ts$/, loader: 'awesome-typescript-loader' },
       { test: /\.json$/, loader: 'json-loader' },
-      { test: /\.html/,  loader: 'raw-loader' },
-      { test: /\.css$/,  loader: 'to-string-loader!css-loader' },
+      { test: /\.html/, loader: 'raw-loader' },
+      { test: /\.css$/, loader: 'to-string-loader!css-loader' },
     ]
   },
 
