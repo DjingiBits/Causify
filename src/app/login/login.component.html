@@ -1,10 +1,10 @@
-<form action="#" method="get">
+<form (ngSubmit)="login()">
     <p>
-        <input type="text" class="username" name="username" placeholder="username">
+        <input type="text" class="username"  [(ngModel)]="loginUserData.username" name="username" placeholder="username">
         <!--<span>username must be greater than 4 character</span>-->
     </p>
     <p>
-        <input type="password" id="con_password" name="con_password" placeholder="confirm password">
+        <input type="password" id="con_password"   [(ngModel)]="loginUserData.password" name="con_password" placeholder="confirm password">
         <!--<span>confirm password</span>-->
     </p>
     <input type="submit" id="submit" value = "Login">

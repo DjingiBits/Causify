@@ -16,6 +16,15 @@ export class UserService {
     
     constructor(private http: Http) { }
 
+    loginUser(data) {
+        let options = new RequestOptions({ headers: this.headers })
+        console.log(options)
+        return this.http.post(this.dbUrl + '/login', data, options)
+            .map((response: Response) => response.json())
+            .do(data => console.log('Current user ' + JSON.stringify(data)))
+            .catch(err => Observable.throw(err))
+    }
+
     registerUser(data) {
         let options = new RequestOptions({ headers: this.headers })
 
