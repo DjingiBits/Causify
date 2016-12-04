@@ -17,7 +17,11 @@ export class RegisterComponent {
         password: "",
         confirmPass: ""
     };
+<<<<<<< Updated upstream
     constructor(private userService: UserService, private router : Router, private app: AppComponent) { }
+=======
+    constructor(private user: UserService, private router : Router, private app: AppComponent) { }
+>>>>>>> Stashed changes
 
     register() {
         this.userService

@@ -12,8 +12,12 @@ export class CausesService {
   // TODO --> get token from Kinvey 
   // Kinvey.appAuthTokenHeaders()
 
+<<<<<<< Updated upstream
 
   private authToken: string = '047208fc-21bd-4b5d-99bc-244aa8be7173.rHvthnazXn65Al4RdTIgVqMlCB4XHtFUjDb8MBTPggk='
+=======
+  private authToken: string = 'd721e27e-f5de-4cd8-a0b2-7d1bbf9ba86a.LLUD+8oXdHKFA7oVlCZZ4C3lMhDYv2hFt3krm+5hTfw='
+>>>>>>> Stashed changes
   private headers: Headers = new Headers({})
 
   constructor(private http: Http) { }
