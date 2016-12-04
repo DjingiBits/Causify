@@ -9,10 +9,7 @@ import { Kinvey } from './Kinvey'
 @Injectable()
 export class UserService {
     private dbUrl = Kinvey.baseUrl + 'user/' + Kinvey.appKey
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
+    
     constructor(private http: Http) { }
 
     loginUser(data) {
@@ -39,7 +36,7 @@ export class UserService {
             .map((response: Response) => response.json())
             .catch(err => Observable.throw(err))
     }
-<<<<<<< Updated upstream
+
     logoutUser() {
         let headers: Headers = new Headers({
             'Authorization': "Kinvey " + sessionStorage.getItem("authToken"),
@@ -56,19 +53,5 @@ export class UserService {
         sessionStorage.setItem("userId", userInfo._id);
         sessionStorage.setItem("username", userInfo.username);
         sessionStorage.setItem("authToken", userInfo._kmd.authtoken);
-=======
-    logoutUser(){
-
-        let headers: Headers = new Headers({
-            'Authorization': Kinvey.appAuthTokenHeaders(),
-            'Content-Type': 'application/json'
-        })
-
-
-        let options = new RequestOptions({ headers:  headers })
-
-        return this.http.post(this.dbUrl + '/_logout', options)
-        
->>>>>>> Stashed changes
     }
 }

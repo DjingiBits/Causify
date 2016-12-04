@@ -7,7 +7,7 @@ export interface ICause {
   description: string;
   duration: DurationEnum;
   author: string;
-  startDate: string; // Date?
+  startDate: string; // bootstrap datetimepicker Date?
   category: string; // TODO Enumeration --> Animals, Education, Children, Culture, Homeless ...
 }
 
