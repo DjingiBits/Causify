@@ -9,15 +9,15 @@ import { Kinvey } from './Kinvey'
 @Injectable()
 export class UserService {
     private dbUrl = Kinvey.baseUrl + 'user/' + Kinvey.appKey
-    private headers: Headers = new Headers({
-        'Authorization': Kinvey.appAuthHeaders(),
-        'Content-Type': 'application/json'
-    })
-    
+
     constructor(private http: Http) { }
 
     loginUser(data) {
-        let options = new RequestOptions({ headers: this.headers })
+        let headers: Headers = new Headers({
+            'Authorization': Kinvey.appAuthHeaders(),
+            'Content-Type': 'application/json'
+        })
+        let options = new RequestOptions({ headers: headers })
         console.log(options)
         return this.http.post(this.dbUrl + '/login', data, options)
             .map((response: Response) => response.json())
@@ -26,7 +26,11 @@ export class UserService {
     }
 
     registerUser(data) {
-        let options = new RequestOptions({ headers: this.headers })
+        let headers: Headers = new Headers({
+            'Authorization': Kinvey.appAuthHeaders(),
+            'Content-Type': 'application/json'
+        })
+        let options = new RequestOptions({ headers: headers })
 
         return this.http.post(this.dbUrl, data, options)
             .map((response: Response) => response.json())

@@ -13,27 +13,36 @@ export class CausesService {
   // Kinvey.appAuthTokenHeaders()
 
   private authToken: string = '047208fc-21bd-4b5d-99bc-244aa8be7173.rHvthnazXn65Al4RdTIgVqMlCB4XHtFUjDb8MBTPggk='
-  private headers: Headers = new Headers({})
-
   constructor(private http: Http) { }
 
   getCauses(): Observable<ICause[]> {
-    this.headers.append('Accept', 'application/json')
-    this.headers.append('Authorization', `Kinvey ${this.authToken}`)
-    let options = new RequestOptions({ headers: this.headers })
+    let headers: Headers = new Headers({'Accept': 'application/json'})
+    headers.append('Authorization', `Kinvey ${this.authToken}`)
+    let options = new RequestOptions({ headers: headers })
 
     return this.http.get(this.dbUrl, options)
-        .map((response: Response) => <ICause[]>response.json())
-        .catch(this.handleError)
+      .map((response: Response) => <ICause[]>response.json())
+      .catch(this.handleError)
   }
   postCause(data) {
-    this.headers.append('Authorization', `Kinvey ${this.authToken}`)
-    this.headers.append('Content-Type', 'application/json')
-    let options = new RequestOptions({ headers: this.headers })
-    console.log(JSON.stringify(data))
-    return this.http.post(this.dbUrl, JSON.stringify(data) ,  options)
-        .map(this.handleError)
-        .catch(err => Observable.throw(err))
+    let headers: Headers = new Headers({'Content-Type': 'application/json'})
+    headers.append('Authorization', `Kinvey ${this.authToken}`)    
+    let options = new RequestOptions({ headers: headers })
+
+    return this.http.post(this.dbUrl, JSON.stringify(data), options)
+      .map(this.handleError)
+      .catch(err => Observable.throw(err))
+  }
+
+  getCause(_id: string): Observable<ICause> {
+    let url = this.dbUrl + '/' + _id
+    let headers: Headers = new Headers({'Accept': 'application/json'})
+    headers.append('Authorization', `Kinvey ${this.authToken}`)
+    let options = new RequestOptions({ headers: headers })
+
+    return this.http.get(url, options)
+      .map((response: Response) => <ICause>response.json())
+      .catch(this.handleError)
   }
 
   private handleError(error: Response) {

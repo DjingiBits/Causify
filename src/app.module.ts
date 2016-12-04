@@ -10,12 +10,13 @@ import { HomeComponent } from './app/home/home.component'
 import { LoginComponent } from './app/login/login.component'
 import { RegisterComponent } from './app/register/register.component'
 import { CausesComponent } from './app/causes/causes.component'
+import { DetailCauseComponent } from './app/detailCause/detail-cause.component'
 import { CreateCauseComponent } from './app/createCause/create-cause.component'
 import { PageNotFoundComponent } from './app/pageNotFound/page-not-found.component'
 import { UserService } from './services/user.service'
 import { CausesService } from './services/causes.service'
 
-// TODO --> create PageNotFoundComponent, LOgoutComponent, CauseDetailComponent, Footer
+// TODO --> create LOgoutComponent, CauseDetailComponent, Footer
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import { CausesService } from './services/causes.service'
         LoginComponent,
         RegisterComponent,
         CausesComponent,
+        DetailCauseComponent,
         CreateCauseComponent,
         PageNotFoundComponent
     ],
@@ -35,6 +37,7 @@ import { CausesService } from './services/causes.service'
             { path: 'login', component: LoginComponent },
             { path: 'register', component: RegisterComponent },
             { path: 'causes', component: CausesComponent },
+            { path: 'cause/:_id', component: DetailCauseComponent },
             { path: 'createCuase', component: CreateCauseComponent },
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: '**', component: PageNotFoundComponent },

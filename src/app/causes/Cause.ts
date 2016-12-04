@@ -1,4 +1,5 @@
 export interface ICause {
+  _id: string;
   title: string;
   imageUrl: string;
   description: string;
@@ -9,6 +10,7 @@ export interface ICause {
 }
 
 export class Cause implements ICause {
+  _id: string;
   title: string;
   imageUrl: string;
   description: string;
