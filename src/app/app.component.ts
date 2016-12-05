@@ -9,6 +9,7 @@ import { UserService } from '../services/user.service'
 })
 export class AppComponent {
     pageTitle: string = 'Causify'
+
     errorMessage: any
     isLoggedIn: boolean
 

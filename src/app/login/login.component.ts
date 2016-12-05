@@ -8,7 +8,9 @@ import { AppComponent } from '../app.component'
     styleUrls: ['app/login/login.component.css']
 })
 export class LoginComponent {
+
     constructor(private userService: UserService, private router: Router, private app : AppComponent) { }
+
 
     errorMessage: any
     loginUserData = {

@@ -12,14 +12,14 @@ export class CausesService {
   // TODO --> get token from Kinvey 
   // Kinvey.appAuthTokenHeaders()
 
-
   private authToken: string = '047208fc-21bd-4b5d-99bc-244aa8be7173.rHvthnazXn65Al4RdTIgVqMlCB4XHtFUjDb8MBTPggk='
+
   private headers: Headers = new Headers({})
 
   constructor(private http: Http) { }
 
   getCauses(): Observable<ICause[]> {
-    let headers: Headers = new Headers({'Accept': 'application/json'})
+    let headers: Headers = new Headers({ 'Accept': 'application/json' })
     headers.append('Authorization', `Kinvey ${this.authToken}`)
     let options = new RequestOptions({ headers: headers })
 
@@ -28,8 +28,8 @@ export class CausesService {
       .catch(this.handleError)
   }
   postCause(data) {
-    let headers: Headers = new Headers({'Content-Type': 'application/json'})
-    headers.append('Authorization', `Kinvey ${this.authToken}`)    
+    let headers: Headers = new Headers({ 'Content-Type': 'application/json' })
+    headers.append('Authorization', `Kinvey ${this.authToken}`)
     let options = new RequestOptions({ headers: headers })
 
     return this.http.post(this.dbUrl, JSON.stringify(data), options)
@@ -39,7 +39,7 @@ export class CausesService {
 
   getCause(_id: string): Observable<ICause> {
     let url = this.dbUrl + '/' + _id
-    let headers: Headers = new Headers({'Accept': 'application/json'})
+    let headers: Headers = new Headers({ 'Accept': 'application/json' })
     headers.append('Authorization', `Kinvey ${this.authToken}`)
     let options = new RequestOptions({ headers: headers })
 

@@ -1,12 +1,15 @@
+import { DurationEnum } from '../enums/DurationEnum';
+import { CategoriesEnum } from '../enums/CategoriesEnum'
+
 export interface ICause {
   _id: string;
   title: string;
   imageUrl: string;
   description: string;
-  duration: string; // TODO Enumeration --> up to a day, several days, long term, up to a hour, up to 5 minutes
+  duration: DurationEnum;
   author: string;
-  startDate: string; // Date?
-  category: string; // TODO Enumeration --> Animals, Education, Children, Culture, Homeless ...
+  startDate: string; // bootstrap datetimepicker Date?
+  category: CategoriesEnum; 
 }
 
 export class Cause implements ICause {
@@ -14,12 +17,20 @@ export class Cause implements ICause {
   title: string;
   imageUrl: string;
   description: string;
-  duration: string; 
+  duration: DurationEnum;
   author: string;
-  startDate: string; 
-  category: string; 
+  startDate: string;
+  category: CategoriesEnum;
 
-  constructor(title: string, imageUrl: string, description: string, duration: string, author: string, startDate: string, category: string) {
+  constructor(
+    title: string,
+    imageUrl: string,
+    description: string,
+    duration: DurationEnum,
+    author: string,
+    startDate: string,
+    category: CategoriesEnum
+  ) {
     this.title = title;
     this.imageUrl = imageUrl;
     this.description = description;

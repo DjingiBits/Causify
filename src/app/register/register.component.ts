@@ -3,7 +3,7 @@ import { UserService } from '../../services/user.service'
 import { Router } from '@angular/router'
 import { AppComponent } from '../app.component'
 
-@Component({    
+@Component({
     templateUrl: 'app/register/register.component.html',
     styleUrls: ['app/register/register.component.css']
 })
@@ -17,18 +17,18 @@ export class RegisterComponent {
         password: "",
         confirmPass: ""
     };
-    constructor(private userService: UserService, private router : Router, private app: AppComponent) { }
+    constructor(private userService: UserService, private router: Router, private app: AppComponent) { }
 
     register() {
         this.userService
             .registerUser(this.userData)
             .subscribe(
-                userInfo => {
-                    this.userService.saveAuthInSession(userInfo)
-                    this.router.navigate(['/causes'])
-                    this.app.toggleNavigation()
-                },
-                error => this.errorMessage = <any>error
+            userInfo => {
+                this.userService.saveAuthInSession(userInfo)
+                this.router.navigate(['/causes'])
+                this.app.toggleNavigation()
+            },
+            error => this.errorMessage = <any>error
             );
     }
 }

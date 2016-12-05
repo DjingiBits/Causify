@@ -19,6 +19,11 @@ export class DetailCauseComponent implements OnInit, OnDestroy {
         private causesService: CausesService) {
     }
 
+
+    getCauseId(){
+      return  this.route.params['_id']
+    }
+
     ngOnInit(): void {
         this.subscription = this.route.params.subscribe(
             params => {
@@ -40,4 +45,6 @@ export class DetailCauseComponent implements OnInit, OnDestroy {
     ngOnDestroy(): void {
         this.subscription.unsubscribe()
     }
+
+
 }
