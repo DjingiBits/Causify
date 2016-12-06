@@ -1,13 +1,21 @@
 <div class="wrapper" *ngIf="cause">
+
+  <h3 class="cause-title">{{cause.title}}</h3>
   <div class="cause-component">
-    <h3 class="cause-title">{{cause.title}}</h3>
-    <p>{{cause.category}}</p>
-    <img [src]="cause.imageUrl" [alt]="cause.title" [title]="cause.title"/>
-    <p class="cause-description">{{cause.description}}</p>
-    <p>{{cause.duration}}</p>
-    <p>{{cause.startDate}}</p>
-    <p>{{cause.author}}</p>    
+
+    <div class="left">
+      <img class="cause-img" [src]="cause.imageUrl" [alt]="cause.title" [title]="cause.title"/>
+    </div>
+
+    <div class="right">
+      <p class="cause-author"><b>By: </b> {{cause.author}}</p>
+      <p class="cause-category"><b>Category:</b> {{cause.category}}</p>
+      <p class="cause-description"><b> Description:</b>{{cause.description}}</p>
+      <p class="cause-duration"><b> Duration:</b>{{cause.duration}}</p>
+      <p class="cause-start-date"><b> Start Date:</b>{{cause.startDate}}</p>
+    </div>
   </div>
+
   <comment-box [causeId]="cause._id"> </comment-box>
 
   <input type="button" value="Back" (click)="onBack()">

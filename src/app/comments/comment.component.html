@@ -1,7 +1,8 @@
 <div>
+    <h3 class="comments-title">Comments</h3>
     <div class="comment-box" *ngFor="let comment of comments">
-        <p class="comment-content">COMMENT : {{comment.content}}</p>
-        <p>AUTHOR : {{comment.author}}</p>
+        <p class="comment-content">Comment : {{comment.content}}</p>
+        <p class="author">Author: {{comment.author}}</p>
     </div>
 
 <form (ngSubmit)="addComment()" id="comment-form">

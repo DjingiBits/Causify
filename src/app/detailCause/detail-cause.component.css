@@ -1,0 +1,49 @@
+.wrapper{
+    font: 16px "Open Sans", sans-serif;
+}
+
+.cause-component{
+    display: inline-flex;
+}
+
+.left{
+    float:left;
+    margin-left: 50px;
+}
+
+.right{
+    float: right;
+    margin: 40px;
+
+}
+
+.cause-title {
+    font: 64px "Fredoka One",cursive;
+    color: #6699ff;
+    text-decoration: none;
+    text-align: center;
+}
+
+.cause-category{
+    margin: 0;
+    text-align: left;
+}
+
+.cause-img{
+    display: block;
+    max-width: 800px;
+    max-height: 480px;
+    width: 100%;
+    height: 100%;
+}
+
+.cause-description{
+    width: 650px;
+    word-break: break-all;
+    text-align: left;
+}
+
+.cause-author{
+    display: inline-flex;
+    text-align: left;
+}
