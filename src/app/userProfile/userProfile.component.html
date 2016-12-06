@@ -1,20 +1,21 @@
 <div *ngIf="currentUserData">
-    <h1> Hi, <b>{{currentUserData.firstName}} </b> . Here you can manage your profile settings </h1>
+    <h1 class="greeting"> Hi, <b>{{currentUserData.firstName}} </b> . Here you can manage your profile settings </h1>
     <div id="profile-settings">
-        <div id="firstName">
+        <div class="input" id="firstName">
             First name:
             <input type="text"  value={{currentUserData.firstName}} [(ngModel)]="currentUserData.firstName">
         </div>
-        <div id="lastName">
+        <div class="input" id="lastName">
             Last name:
             <input type="text" value={{currentUserData.lastName}} [(ngModel)]="currentUserData.lastName">
         </div>
-        <div id="passwordChange">
-            <button type="button">Change password</button>
+        <div class="input" id="passwordChange">
+            Change current password
             <input type="password" placeholder="Old password"  [(ngModel)]="checkPass">
             <input type="password" placeholder="New password">
             <input type="password" placeholder="Confirm new password">
+            <button type="button">Change password</button>
         </div>
-        <button type="button" (click)="changeUserData()">Save Changes</button>
+        <button class="save" type="button" (click)="changeUserData()">Save Changes</button>
     </div>
 </div>

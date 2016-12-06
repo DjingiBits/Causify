@@ -7,3 +7,62 @@
 #passwordChange{
     padding-bottom: 30px;
 }
+
+.greeting{
+    font: 36px "Fredoka One", cursive;
+    text-align: center;
+    color: #6699ff;
+}
+
+#profile-settings{
+    margin-left: 30px;
+    padding: 40px;
+}
+
+.input{
+    font: 24px "Open Sans", sans-serif;
+    font-weight: 700;
+    color: #333333;
+}
+
+#passwordChange{
+display: block;
+}
+
+
+input[type=text],
+input[type=password]{
+    font: 18px "Open Sans", sans-serif;
+    color: #333333;
+    border:none;
+    border-bottom: 3px solid transparent;
+    transition: .3s ease-in;
+    margin: 10px;
+}
+
+input[type=password]{
+    display: block;
+    margin: 20px;
+}
+
+input[type=text]:focus,
+input[type=password]:focus{
+    border-color: #6699ff;
+    outline:none;
+}
+
+button{
+    border: 3px solid #ff6633;
+    border-radius: 20px;
+    padding: 10px 15px;
+    color: #ff6633;
+    font: 14px "Open Sans", sans-serif;
+    font-weight: 500;
+    background: none;
+}
+
+button:hover{
+    background: #ff6633;
+    color:white;
+    cursor:pointer;
+}
