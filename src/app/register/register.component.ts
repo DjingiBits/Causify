@@ -19,6 +19,7 @@ export class RegisterComponent {
     };
     constructor(private userService: UserService, private router: Router, private app: AppComponent) { }
 
+
     register() {
         this.userService
             .registerUser(this.userData)
@@ -29,6 +30,7 @@ export class RegisterComponent {
                 this.app.toggleNavigation()
             },
             error => this.errorMessage = <any>error
+
             );
     }
 }

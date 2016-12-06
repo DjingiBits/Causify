@@ -46,5 +46,4 @@ export class DetailCauseComponent implements OnInit, OnDestroy {
         this.subscription.unsubscribe()
     }
 
-
 }

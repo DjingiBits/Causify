@@ -5,11 +5,10 @@
                 <li><a [routerLink]="['/home']" *ngIf="true" >Home</a></li>
                 <li><a [routerLink]="['/causes']" *ngIf = "isLoggedIn" >All Causes</a></li>
                 <li><a [routerLink]="['/createCuase']"  *ngIf = "isLoggedIn">Create Cause</a></li>
-
                 <li><a [routerLink]="['/causesMap']"  *ngIf = "isLoggedIn">Causes Map</a></li>
-
                 <li><a [routerLink]="['/login']" *ngIf = "!isLoggedIn" >Login</a></li>
                 <li><a [routerLink]="['/register']" *ngIf = "!isLoggedIn">Register</a></li>
+                <li><a [routerLink]="['/userProfile']" *ngIf = "isLoggedIn">Your Profile</a></li>
                 <li><a *ngIf = "isLoggedIn" (click)="logout()" >Logout</a></li>
             </ul>
         </div>

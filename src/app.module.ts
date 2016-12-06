@@ -10,6 +10,7 @@ import { AppComponent } from './app/app.component'
 import { HomeComponent } from './app/home/home.component'
 import { LoginComponent } from './app/login/login.component'
 import { RegisterComponent } from './app/register/register.component'
+import { UserProfileComponent } from './app/userProfile/userProfile.component'
 import { CausesComponent } from './app/causes/causes.component'
 import { DetailCauseComponent } from './app/detailCause/detail-cause.component'
 import { CreateCauseComponent } from './app/createCause/create-cause.component'
@@ -34,7 +35,8 @@ import { CommentsService } from './services/comments.service'
         PageNotFoundComponent,
         FooterComponent,
         CausesMapComponent,
-        CommentComponent
+        CommentComponent,
+        UserProfileComponent
     ],
     providers: [FormBuilder, UserService, CausesService, CommentsService],
     imports: [
@@ -43,6 +45,7 @@ import { CommentsService } from './services/comments.service'
             { path: 'home', component: HomeComponent },
             { path: 'login', component: LoginComponent },
             { path: 'register', component: RegisterComponent },
+            { path: 'userProfile', component: UserProfileComponent },
             { path: 'causes', component: CausesComponent },
             { path: 'cause/:_id', component: DetailCauseComponent },
             { path: 'createCuase', component: CreateCauseComponent },

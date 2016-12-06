@@ -9,7 +9,7 @@ import { Kinvey } from './Kinvey'
 @Injectable()
 export class UserService {
     private dbUrl = Kinvey.baseUrl + 'user/' + Kinvey.appKey
-    
+
     constructor(private http: Http) { }
 
     loginUser(data) {
@@ -37,6 +37,7 @@ export class UserService {
             .catch(err => Observable.throw(err))
     }
 
+
     logoutUser() {
         let headers: Headers = new Headers({
             'Authorization': "Kinvey " + sessionStorage.getItem("authToken"),
@@ -49,9 +50,29 @@ export class UserService {
             .catch(err => Observable.throw(err))
     }
 
+    getUserData(){
+        return {
+            firstName : sessionStorage.getItem('firstName'),
+            lastName : sessionStorage.getItem('lastName'),
+        }
+    }
+
+    changeUser(data, checkPass){
+        let headers: Headers = new Headers({
+            'Authorization': "Basic " + btoa(sessionStorage.getItem("username") + ":" + checkPass),
+            'Content-Type': 'application/json'
+        })
+        let options = new RequestOptions({ headers: headers })
+        return this.http.put(this.dbUrl + "/" + sessionStorage.getItem("userId"), JSON.stringify(data), options)
+            .map((response: Response) => response.json())
+            .catch(err => Observable.throw(err))
+    }
+
     saveAuthInSession(userInfo: any) {
         sessionStorage.setItem("userId", userInfo._id);
         sessionStorage.setItem("username", userInfo.username);
+        sessionStorage.setItem("firstName", userInfo.firstName);
+        sessionStorage.setItem("lastName", userInfo.lastName);
         sessionStorage.setItem("authToken", userInfo._kmd.authtoken);
     }
 }
