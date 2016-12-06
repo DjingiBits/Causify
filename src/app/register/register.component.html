@@ -1,6 +1,7 @@
 <div>
     <form  (ngSubmit)="register()">
         <h2 class="form-title">Don't have an account with us?</h2>
+        <span class="alert" *ngIf="userExist">User already exists</span>
         <p>
             <input type="text" class="username"
                    [(ngModel)]="userData.username"
@@ -43,7 +44,6 @@
             <span *ngIf="!checkPasswordsMatch">Passwords do not match</span>
         </p>
         <input type="submit" id="submit" value = "Register">
-        <button type="button" [routerLink]="['/login']">Login</button>
-        <span *ngIf="userExist">User already exists</span>
+        <button type="button" [routerLink]="['/login']">Already have an account? Login</button>
     </form>
 </div>

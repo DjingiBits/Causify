@@ -2,14 +2,32 @@ nav{
   box-shadow: 3px 4px 15px -7px rgba(0,0,0,0.66);
   display: inline-block;
   width: 100%;
+  height: 52px;
+  font-family: "Open Sans", sans-serif;
 }
 
-a{
+li{
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.container-fluid{
+  float: right;
+  margin-right: 20px;
+}
+
+li > a{
+  text-decoration: none;
   color: #333333;
+  list-style-type: none;
 }
 
-.logo {
+.logo,
+.logo > a{
+  text-decoration: none;
   font: 36px 'Fredoka One', cursive;
-  margin-left: 70px;
-  color: #ff6633;
+  margin-left: 30px;
+  margin-top: 0px;
+  color: #ff6633 !important;
+  float: left;
 }

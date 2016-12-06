@@ -1,9 +1,8 @@
 <div>
     <nav class = "navigation-bar">
-        <p class="logo pull-left">causify</p>
+        <p class="logo pull-left"><a [routerLink]="['/home']" *ngIf="true" >causify</a></p>
         <div class="container-fluid">
             <ul class="nav navbar-nav pull-right">
-                <li><a [routerLink]="['/home']" *ngIf="true" >Home</a></li>
                 <li><a [routerLink]="['/causes']" *ngIf = "hasAuth" >Explore</a></li>
                 <li><a [routerLink]="['/createCause']"  *ngIf = "hasAuth">Start Cause</a></li>
                 <li><a [routerLink]="['/causesMap']"  *ngIf = "hasAuth">Causes Map</a></li>

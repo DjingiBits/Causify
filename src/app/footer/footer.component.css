@@ -2,21 +2,22 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
-    background: #6699ff;
+    background: #333333;
     width: 100%;
-    border-top: 5px solid #eee;
-    box-shadow: 10px -10px 10px #aaa;
-    height: 50px;
+    height: 40px;
+    font: 12px "Open Sans", sans-serif;
 }
 footer p{
+
     text-align: center;
     color: white;
 }
 footer a {
     color: #fff;
     text-decoration: none;
+    transition: .5s ease-in;
 }
 footer a:hover {
-    color: #ffa000;
-    transform:skewY(7deg);
+    font-weight: 700;
+    transform: scale(1.15);
 }

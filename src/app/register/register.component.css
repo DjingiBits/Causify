@@ -1,18 +1,18 @@
 div{
-    background: url("/img/background.jpg") no-repeat center center;
-
+    background: url('/img/background.jpg') no-repeat center center;
 }
 
 form{
     background:#6699ff;
     padding:2em;
-    max-width:400px;
+    max-width:500px;
     margin:50px auto 0;
+    text-align: center;
 }
 
 input{
     width:50%;
-    font-family: "Helvetica Neue", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 200;
     display:block;
     box-sizing:border-box;
@@ -20,7 +20,7 @@ input{
     border:none;
     background:none;
     outline:none;
-    padding: 15px;
+    padding: 10px;
     color: #333333;
     border-bottom: 3px solid transparent;
     transition: .4s ease-in;
@@ -45,7 +45,7 @@ input::-webkit-input-placeholder{
     text-align:center;
     text-transform:uppercase;
     color:white;
-    font-family: "Helvetica Neue", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 200;
 }
 
@@ -55,7 +55,7 @@ p{
 }
 
 input[type="submit"]{
-    padding:15px;
+    padding:10px;
     border:3px solid white;
     border-radius: 80px;
     color:#fff;
@@ -63,14 +63,43 @@ input[type="submit"]{
     cursor:pointer;
 }
 
+input[type="submit"]:hover{
+    background: #ff6633;
+    border-color: #ff6633;
+}
 .username, .firstName, .lastName >span{
     display:block;
 }
 
+button{
+    border: none;
+    background: none;
+    color: #fafafa;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    transition: .4s ease-in;
+}
+
+button:hover{
+    color: white;
+    transform: scale(1.1);
+}
 
 .form-title{
     color: white;
     font: 24px "Helvetica Neue";
     font-weight: 800;
     text-align: center;
+}
+
+.alert{
+    margin-top: 15px;
+    width:400px;
+    height: 40px;
+    background: #d6482f;
+    padding: 10px;
+    color: white;
+    font: 14px "Open Sans", sans-serif;
+    transition: opacity 3s ease-in-out;
 }

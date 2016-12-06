@@ -22,6 +22,7 @@ var config = {
       { test: /\.json$/, loader: 'json-loader' },
       { test: /\.html/, loader: 'raw-loader' },
       { test: /\.css$/, loader: 'to-string-loader!css-loader' },
+      { test: /\.css/, loader: 'style!css'}
     ]
   },
 

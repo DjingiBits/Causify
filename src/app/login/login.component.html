@@ -1,6 +1,9 @@
 <div>
     <form (ngSubmit)="login()">
         <h2 class="form-title">Enter your details to log in:</h2>
+
+        <span class="alert" *ngIf= "!validCredentials">Invalid username or password</span>
+
         <p>
             <input type="text" class="username"  [(ngModel)]="loginUserData.username" name="username" placeholder="enter username" required>
         </p>
@@ -8,7 +11,6 @@
             <input type="password" id="con_password"   [(ngModel)]="loginUserData.password" name="con_password" placeholder="enter password">
         </p>
         <input type="submit" id="submit" value = "Login">
-        <button type="button" [routerLink]="['/register']">Register</button>
-        <span *ngIf= "!validCredentials">Invalid username or password</span>
+        <button type="button" [routerLink]="['/register']">Don't have an account? Register now.</button>
     </form>
 </div>

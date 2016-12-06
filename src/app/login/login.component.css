@@ -8,18 +8,14 @@ form{
     padding:2em;
     max-width:400px;
     margin:50px auto 0;
+    text-align: center;
 }
 
 input{
-    padding:10px 10px 10px 5px;
     display:block;
-    width:100%;
-    border:none;
-    border-bottom:1px solid #ccc;
     width:50%;
-    font-family: "Helvetica Neue", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 200;
-    display:block;
     box-sizing:border-box;
     margin: 0 auto;
     border:none;
@@ -36,7 +32,7 @@ input[type="password"]{
     background:none;
     display: block;
     outline:none;
-    padding: 15px;
+    padding: 10px;
     color: white;
     border-bottom: 3px solid transparent;
 }
@@ -50,7 +46,7 @@ input::-webkit-input-placeholder{
     text-align:center;
     text-transform:uppercase;
     color:white;
-    font-family: "Helvetica Neue", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 200;
 }
 
@@ -60,12 +56,32 @@ p{
 }
 
 input[type="submit"]{
-    padding:15px;
+    padding:10px;
     border:3px solid white;
     border-radius: 80px;
     color:#fff;
     font-weight:bolder;
     cursor:pointer;
+}
+
+input[type="submit"]:hover{
+    background: #ff6633;
+    border-color: #ff6633;
+}
+
+button{
+    border: none;
+    background: none;
+    color: #fafafa;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    transition: .4s ease-in;
+}
+
+button:hover{
+color: white;
+    transform: scale(1.1);
 }
 
 .username, .firstName, .lastName >span{
@@ -78,4 +94,15 @@ input[type="submit"]{
     font: 24px "Helvetica Neue";
     font-weight: 800;
     text-align: center;
+}
+
+.alert{
+    margin-top: 15px;
+    width:400px;
+    height: 40px;
+    background: #d6482f;
+    padding: 10px;
+    color: white;
+    font: 14px "Open Sans", sans-serif;
+    transition: opacity 3s ease-in-out;
 }

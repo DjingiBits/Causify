@@ -4,7 +4,7 @@
 }
 
 body{
-    font: 14px "Helvetica Neue";
+    font: 14px "Open Sans";
     height: 100vh;
 }
 .wrapper{
@@ -14,7 +14,7 @@ body{
 }
 
 .big-title{
-    font: 72px "Helvetica Neue";
+    font: 72px "Open Sans";
     font-weight: 900;
     color: white;
     text-align: center;
@@ -22,7 +22,7 @@ body{
 }
 
 .intro-text{
-    font: 24px "Helvetica Neue";
+    font: 24px "Open Sans";
     font-weight: 100;
     color: white;
     text-align: center;
@@ -34,13 +34,13 @@ body{
     display: flex;
     padding: 10px;
     margin-top: 100px;
-    margin-left: 180px;
+    margin-left: 100px;
     margin-bottom: 100px;
 
 }
 
 .option-text{
-    font: 42px "Helvetica Neue";
+    font: 40px "Open Sans";
     font-weight: 700;
     color: white;
     margin-top: 6px;
@@ -103,7 +103,7 @@ input.cmn-toggle-round:checked + label:after{
     margin-left: 60px;
 }
 
-input[type=checkbox]:checked + div.wrapper{
+input[type=checkbox]:checked ~ body{
     background: #ff6633;
 }
 
@@ -113,7 +113,7 @@ input[type=checkbox]:checked + div.wrapper{
     outline: none;
     box-shadow: none;
     background: none;
-    font: 36px "Helvetica Neue";
+    font: 36px "Open Sans";
     font-weight: 800;
     color: white;
     position: relative;
@@ -128,48 +128,3 @@ input[type=checkbox]:checked + div.wrapper{
 }
 
 
-.popup {
-    display: none;
-    background: white;
-    width: 25%;
-    padding: 40px 30px 60px 30px;
-    margin: 0 auto;
-    box-shadow: 2px 5px 5px rgba(0,0,0,0.3);
-    position: absolute;
-    left:35%;
-    top:30%;
-    transition: slide .5s;
-
-}
-
-
-.form-title{
-    font: 20px "Helvetica Neue";
-    text-align: center;
-}
-
-input{
-    border:none;
-    background:none;
-    display: block;
-    outline:none;
-    padding: 15px;
-    color: #333333;
-    border-bottom: 3px solid transparent;
-}
-
-input:focus{
-    border-bottom: 3px solid #6699ff;
-    transition: ease-in .4s;
-}
-
-[placeholder]{
-    font-size: 16px;
-    padding: 20px;
-}
-
-.login-btn{
-    border:none;
-    background: none;
-    font: 16px "Helvetica Neue";
-}
