@@ -33,7 +33,7 @@ export class CommentComponent {
             .subscribe(
                 () => {
                     console.log('Comment created')
-                        this.router.navigate(['/cause'])
+                        this.router.navigate([`/causes`])
                 },
                         error => this.errorMessage = <any>error
             );

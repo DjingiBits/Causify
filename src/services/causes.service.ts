@@ -9,10 +9,9 @@ import { Kinvey } from './Kinvey'
 @Injectable()
 export class CausesService {
   private dbUrl: string = Kinvey.baseUrl + 'appdata/' + Kinvey.appKey + '/causes'
-  // TODO --> get token from Kinvey 
-  // Kinvey.appAuthTokenHeaders()
+  // TODO --> get token from Kinvey
 
-  private authToken: string = '047208fc-21bd-4b5d-99bc-244aa8be7173.rHvthnazXn65Al4RdTIgVqMlCB4XHtFUjDb8MBTPggk='
+  private appAuthToken: string = '047208fc-21bd-4b5d-99bc-244aa8be7173.rHvthnazXn65Al4RdTIgVqMlCB4XHtFUjDb8MBTPggk='
 
   private headers: Headers = new Headers({})
 
@@ -20,7 +19,7 @@ export class CausesService {
 
   getCauses(): Observable<ICause[]> {
     let headers: Headers = new Headers({ 'Accept': 'application/json' })
-    headers.append('Authorization', `Kinvey ${this.authToken}`)
+    headers.append('Authorization', `Kinvey ${this.appAuthToken}`)
     let options = new RequestOptions({ headers: headers })
 
     return this.http.get(this.dbUrl, options)
@@ -29,7 +28,7 @@ export class CausesService {
   }
   postCause(data) {
     let headers: Headers = new Headers({ 'Content-Type': 'application/json' })
-    headers.append('Authorization', `Kinvey ${this.authToken}`)
+    headers.append('Authorization', `Kinvey ` + sessionStorage.getItem('authToken'))
     let options = new RequestOptions({ headers: headers })
 
     return this.http.post(this.dbUrl, JSON.stringify(data), options)
@@ -40,7 +39,7 @@ export class CausesService {
   getCause(_id: string): Observable<ICause> {
     let url = this.dbUrl + '/' + _id
     let headers: Headers = new Headers({ 'Accept': 'application/json' })
-    headers.append('Authorization', `Kinvey ${this.authToken}`)
+    headers.append('Authorization', `Kinvey ${this.appAuthToken}`)
     let options = new RequestOptions({ headers: headers })
 
     return this.http.get(url, options)
@@ -48,8 +47,19 @@ export class CausesService {
       .catch(this.handleError)
   }
 
+  deleteCause(_id: string){
+    let url = this.dbUrl + '/' + _id
+    let headers: Headers = new Headers({
+      'Authorization':`Kinvey ` +  sessionStorage.getItem('authToken')
+    })
+    let options = new RequestOptions({ headers: headers })
+
+    return this.http.delete(url, options)
+        .map((response: Response) => <ICause>response.json())
+        .catch(this.handleError)
+  }
+
   private handleError(error: Response) {
-    console.log(error)
     return Observable.throw(error.json().error || 'Server error')
   }
 }

@@ -12,7 +12,6 @@ export class LoginComponent {
     constructor(private userService: UserService, private router: Router, private app : AppComponent) { }
 
     validCredentials = true;
-    errorMessage: any
     loginUserData = {
         username: "",
         password: ""

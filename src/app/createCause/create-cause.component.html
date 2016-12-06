@@ -1,17 +1,33 @@
 <form (ngSubmit)="createCause()">
   <div>
     <label>Tilte:</label>
-    <input type="text" [(ngModel)]="causeData.title" name="title" placeholder="Cause Title" required/>
+    <input type="text"
+           [(ngModel)]="causeData.title"
+           ngModel minlength="5"
+           ngModel maxlength="20"
+           name="title"
+           placeholder="Cause Title"
+           required/>
   </div>
 
   <div>
     <label>Image:</label>
-    <input type="text" [(ngModel)]="causeData.imageUrl" name="title" placeholder="Image Url" required/>
+    <input type="text"
+           [(ngModel)]="causeData.imageUrl"
+           name="imageUrl"
+           placeholder="Image Url"
+           required/>
   </div>
 
   <div>
     <label>Description:</label>
-    <textarea cols="30" rows="10" [(ngModel)]="causeData.description" name="title" placeholder="Cause description" required></textarea>
+    <textarea cols="30" rows="10"
+              [(ngModel)]="causeData.description"
+              ngModel minlength="20"
+              ngModel maxlength="400"
+              name="description"
+              placeholder="Cause description"
+              required></textarea>
   </div>
 
   <div>
@@ -23,7 +39,11 @@
 
   <div>
     <label>Start date:</label>
-    <input type="text" [(ngModel)]="causeData.startDate" name="title" placeholder="Cause Start date" required/>
+    <input type="text"
+           [(ngModel)]="causeData.startDate"
+           name="title"
+           placeholder="Cause Start date"
+           required/>
   </div>
 
   <div>
