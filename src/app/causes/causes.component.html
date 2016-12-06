@@ -1,13 +1,15 @@
 <div class="wrapper">
   <div class="cause-component" *ngFor="let cause of causes">
-    <h3 class="cause-title"><a [routerLink]="['/cause', cause._id]">Title: {{cause.title}}</a></h3>
-    <!--<p>{{cause._id}}</p>-->
-    <p>Category: {{cause.category}}</p>
-    <img [src]="cause.imageUrl" [alt]="cause.title" [title]="cause.title"/>
-    <p class="cause-description">Description: {{cause.description}}</p>
-    <p>Duration: {{cause.duration}}</p>
-    <p>Start date: {{cause.startDate}}</p>
-    <p>Author: {{cause.author}}</p>
-    <button *ngIf="cause.author == currentUser" (click)="deleteCurrentCause(cause._id)">Delete Cause</button>
+    <div class="cause-info">
+      <h3 class="cause-title"><a [routerLink]="['/cause', cause._id]">{{cause.title}}</a></h3>
+      <p class="cause-author"><b>By: </b> {{cause.author}}</p>
+      <!--<p>{{cause._id}}</p>-->
+      <p class="cause-category"><b>Category: </b> {{cause.category}}</p>
+      <img class="cause-img" [src]="cause.imageUrl" [alt]="cause.title" [title]="cause.title"/>
+      <p class="cause-description"><b>Description: </b> {{cause.description}}</p>
+      <p class="cause-duration"><b>Duration: </b> {{cause.duration}}</p>
+      <p class="cause-start-date"><b>Start date: </b> {{cause.startDate}}</p>
+      <button class="cause-delete" *ngIf="cause.author == currentUser" (click)="deleteCurrentCause(cause._id)">Delete Cause</button>
+    </div>
   </div>
 </div>
