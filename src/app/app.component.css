@@ -1,24 +1,15 @@
-.navigation-bar ul {
-  list-style-type: none;
-  font-size: 26px;
-  margin: 0;
-  padding: 0;
+nav{
+  box-shadow: 3px 4px 15px -7px rgba(0,0,0,0.66);
+  display: inline-block;
   width: 100%;
-  background-color: #f1f1f1;
 }
 
-.navigation-bar a {
-  display: inline-block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
+a{
+  color: #333333;
 }
 
-.navigation-bar li {
-  display: inline-block;
-}
-
-.navigation-bar a:hover {
-  background-color: #555;
-  color: white;
+.logo {
+  font: 36px 'Fredoka One', cursive;
+  margin-left: 70px;
+  color: #ff6633;
 }

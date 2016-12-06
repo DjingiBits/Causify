@@ -11,6 +11,11 @@ form{
 }
 
 input{
+    padding:10px 10px 10px 5px;
+    display:block;
+    width:100%;
+    border:none;
+    border-bottom:1px solid #ccc;
     width:50%;
     font-family: "Helvetica Neue", sans-serif;
     font-weight: 200;

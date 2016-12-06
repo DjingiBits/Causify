@@ -24,6 +24,7 @@
     "angular2-google-maps": "^0.16.0",
     "bootstrap": "^3.3.6",
     "core-js": "^2.4.1",
+    "hover.css": "^2.0.2",
     "lodash": "^4.16.1",
     "rxjs": "^5.0.0-beta.12",
     "zone.js": "^0.6.25"

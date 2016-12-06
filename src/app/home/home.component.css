@@ -10,7 +10,7 @@ body{
 .wrapper{
     width: 100%;
     height: 100%;
-    background-color: #6699ff;
+    background: #6699ff;
 }
 
 .big-title{
@@ -95,15 +95,16 @@ input.cmn-toggle-round + label:after{
 }
 
 input.cmn-toggle-round:checked + label:before{
-    background-color: #6699ff;
+    background: #6699ff;
+
 }
 
 input.cmn-toggle-round:checked + label:after{
     margin-left: 60px;
 }
 
-input.cmn-toggle-round:checked + .wrapper:before{
-    background-color: #ff6633;
+input[type=checkbox]:checked + div.wrapper{
+    background: #ff6633;
 }
 
 .cta-begin {
