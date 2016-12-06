@@ -9,11 +9,12 @@
 .left{
     float:left;
     margin-left: 50px;
+
 }
 
 .right{
     float: right;
-    margin: 40px;
+    margin: 0px 20px;
 
 }
 
