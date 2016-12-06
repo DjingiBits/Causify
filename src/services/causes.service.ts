@@ -19,7 +19,7 @@ export class CausesService {
 
   getCauses(): Observable<ICause[]> {
     let headers: Headers = new Headers({ 'Accept': 'application/json' })
-    headers.append('Authorization', `Kinvey ${this.appAuthToken}`)
+    headers.append('Authorization', 'Kinvey' + sessionStorage.getItem('authToken'))
     let options = new RequestOptions({ headers: headers })
 
     return this.http.get(this.dbUrl, options)
@@ -28,7 +28,7 @@ export class CausesService {
   }
   postCause(data) {
     let headers: Headers = new Headers({ 'Content-Type': 'application/json' })
-    headers.append('Authorization', `Kinvey ` + sessionStorage.getItem('authToken'))
+    headers.append('Authorization', 'Kinvey' + sessionStorage.getItem('authToken'))
     let options = new RequestOptions({ headers: headers })
 
     return this.http.post(this.dbUrl, JSON.stringify(data), options)
@@ -39,7 +39,7 @@ export class CausesService {
   getCause(_id: string): Observable<ICause> {
     let url = this.dbUrl + '/' + _id
     let headers: Headers = new Headers({ 'Accept': 'application/json' })
-    headers.append('Authorization', `Kinvey ${this.appAuthToken}`)
+    headers.append('Authorization', 'Kinvey' + sessionStorage.getItem('authToken'))
     let options = new RequestOptions({ headers: headers })
 
     return this.http.get(url, options)
