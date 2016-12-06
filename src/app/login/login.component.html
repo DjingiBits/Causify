@@ -1,11 +1,14 @@
-<form (ngSubmit)="login()">
-    <p>
-        <input type="text" class="username"  [(ngModel)]="loginUserData.username" name="username" placeholder="username">
-    </p>
-    <p>
-        <input type="password" id="con_password"   [(ngModel)]="loginUserData.password" name="con_password" placeholder="confirm password">
-    </p>
-    <input type="submit" id="submit" value = "Login">
-    <button type="button" [routerLink]="['/register']">Register</button>
-    <span *ngIf= "!validCredentials">Invalid username or password</span>
-</form>
+<div>
+    <form (ngSubmit)="login()">
+        <h2 class="form-title">Enter your details to log in:</h2>
+        <p>
+            <input type="text" class="username"  [(ngModel)]="loginUserData.username" name="username" placeholder="username">
+        </p>
+        <p>
+            <input type="password" id="con_password"   [(ngModel)]="loginUserData.password" name="con_password" placeholder="confirm password">
+        </p>
+        <input type="submit" id="submit" value = "Login">
+        <button type="button" [routerLink]="['/register']">Register</button>
+        <span *ngIf= "!validCredentials">Invalid username or password</span>
+    </form>
+</div>

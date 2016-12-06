@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Causify</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous">
+    </script>
+
+</head>
+
+<body>
+<div class="wrapper">
+        <h1 class="big-title">Welcome to Causify!</h1>
+        <h3 class="intro-text">What would you like to do?</h3>
+
+        <div class="switch">
+            <h2 class="option-text">Create a cause</h2>
+            <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox">
+            <label for="cmn-toggle-1"></label>
+            <h2 class="option-text">Support a cause</h2>
+        </div>
+
+        <button class="cta-begin" onclick="promptLogin();">Get Started</button>
+
+        <div id="login-form" class="popup">
+            <h2 class="form-title">Do you have an account with us?</h2>
+            <form>
+                <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Enter username">
+                <input id="password" name="password" value="" type="password" placeholder="Enter password">
+                <button class="login-btn">Log In</button>
+            </form>
+        <a href="#"> Don't have an account? Register now.</a>
+        </div>
+</div>
+
+<script>
+    function promptLogin(){
+        document.getElementById("#login-form").style.display("block");
+    }
+</script>
+</body>
+</html>
