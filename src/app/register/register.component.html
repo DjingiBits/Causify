@@ -1,46 +1,49 @@
-<form  (ngSubmit)="register()">
-    <p>
-        <input type="text" class="username"
-               [(ngModel)]="userData.username"
-               ngModel minlength="4"
-               ngModel maxlength="20"
-               name = "username"
-               placeholder="username">
-        <!--<span>Username must be greater than 4 character</span>-->
-    </p>
-    <p>
-        <input type="text" class="firstName"
-               [(ngModel)]="userData.firstName"
-               ngModel minlength="4"
-               ngModel maxlength="20"
-               name = "firstName"
-               placeholder="First Name">
-        <!--<span>First Name must be greater than 4 character</span>-->
-    </p>
-    <p>
-        <input type="text" class="lastName"
-               [(ngModel)]="userData.lastName"
-               ngModel minlength="4"
-               ngModel maxlength="20"
-               name = "lastName"
-               placeholder="Last Name"
-        >
-        <!--<span>Last Name must be greater than 4 character</span>-->
-    </p>
-    <p>
-        <input type="password" id="password"
-               [(ngModel)]="userData.password"
-               ngModel minlength="5"
-               ngModel maxlength="20"
-               name = "username"
-               placeholder="password">
-        <!--<span>Password must be greater than 5 character</span>-->
-    </p>
-    <p>
-        <input type="password" id="con_password" [(ngModel)]="confirmPass"  name = "username"  placeholder="confirm password">
-        <span *ngIf="!checkPasswordsMatch">Passwords do not match</span>
-    </p>
-    <input type="submit" id="submit" value = "Register">
-    <button type="button" [routerLink]="['/login']">Login</button>
-    <span *ngIf="userExist">User already exists</span>
-</form>
+<div>
+    <form  (ngSubmit)="register()">
+        <h2 class="form-title">Don't have an account with us?</h2>
+        <p>
+            <input type="text" class="username"
+                   [(ngModel)]="userData.username"
+                   ngModel minlength="4"
+                   ngModel maxlength="20"
+                   name = "username"
+                   placeholder="username">
+            <!--<span>Username must be greater than 4 character</span>-->
+        </p>
+        <p>
+            <input type="text" class="firstName"
+                   [(ngModel)]="userData.firstName"
+                   ngModel minlength="4"
+                   ngModel maxlength="20"
+                   name = "firstName"
+                   placeholder="First Name">
+            <!--<span>First Name must be greater than 4 character</span>-->
+        </p>
+        <p>
+            <input type="text" class="lastName"
+                   [(ngModel)]="userData.lastName"
+                   ngModel minlength="4"
+                   ngModel maxlength="20"
+                   name = "lastName"
+                   placeholder="Last Name"
+            >
+            <!--<span>Last Name must be greater than 4 character</span>-->
+        </p>
+        <p>
+            <input type="password" id="password"
+                   [(ngModel)]="userData.password"
+                   ngModel minlength="5"
+                   ngModel maxlength="20"
+                   name = "username"
+                   placeholder="password">
+            <!--<span>Password must be greater than 5 character</span>-->
+        </p>
+        <p>
+            <input type="password" id="con_password" [(ngModel)]="confirmPass"  name = "username"  placeholder="confirm password">
+            <span *ngIf="!checkPasswordsMatch">Passwords do not match</span>
+        </p>
+        <input type="submit" id="submit" value = "Register">
+        <button type="button" [routerLink]="['/login']">Login</button>
+        <span *ngIf="userExist">User already exists</span>
+    </form>
+</div>

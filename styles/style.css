@@ -128,7 +128,6 @@ input.cmn-toggle-round:checked + .wrapper:before{
 
 
 .popup {
-    display: none;
     background: white;
     width: 25%;
     padding: 40px 30px 60px 30px;
