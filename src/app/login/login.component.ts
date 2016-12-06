@@ -11,7 +11,7 @@ export class LoginComponent {
 
     constructor(private userService: UserService, private router: Router, private app : AppComponent) { }
 
-
+    validCredentials = true;
     errorMessage: any
     loginUserData = {
         username: "",
@@ -27,7 +27,10 @@ export class LoginComponent {
                     this.router.navigate(['/causes'])
                     this.app.toggleNavigation()
                 },
-                error => this.errorMessage = <any>error
+                () => {
+                   this.validCredentials = false;
+                }
             );
     }
+
 }

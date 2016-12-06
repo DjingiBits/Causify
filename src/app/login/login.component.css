@@ -30,28 +30,6 @@ input::-webkit-input-placeholder{
 p{
     position:relative;
 }
-span{
-    position:absolute;
-    background:#222;
-    width:200px;
-    padding:7px 10px;
-    color:#fff;
-    top:0;
-    left:105%;
-}
-
-span:after{
-    position:absolute;
-    border:solid transparent;
-    content: " ";
-    height:0;
-    width:0;
-    right:100%;
-    top:50%;
-    border-right-color:#222;
-    border-width:8px;
-    margin-top:-8px;
-}
 input[type="submit"]{
     padding:20px 10px;
     border:none;

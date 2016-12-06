@@ -7,6 +7,9 @@ import { Router } from '@angular/router'
     templateUrl: 'app/userProfile/userProfile.component.html',
     styleUrls: ['app/userProfile/userProfile.component.css']
 })
+
+//TODO: ADD CHAGE PASSWORD FUNCTIONALITY
+
 export class UserProfileComponent {
 
     errorMessage: any
@@ -34,5 +37,7 @@ export class UserProfileComponent {
                  },
                  error => this.errorMessage = <any>error
              );
+
     }
+
 }

@@ -11,12 +11,12 @@ export class AppComponent {
     pageTitle: string = 'Causify'
 
     errorMessage: any
-    isLoggedIn: boolean
+    hasAuth: boolean
 
     constructor(private user: UserService, private router: Router) { }
 
     toggleNavigation() {
-        this.isLoggedIn = !!sessionStorage.getItem('authToken')
+        this.hasAuth = !!sessionStorage.getItem('authToken')
     }
 
     logout() {
@@ -30,4 +30,5 @@ export class AppComponent {
             error => console.log(error.json())
             );
     }
+
 }
