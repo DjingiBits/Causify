@@ -9,26 +9,38 @@ import { AppComponent } from '../app.component'
 })
 export class RegisterComponent {
 
-    errorMessage: any
+    userExist = false;
     userData = {
         username: "",
         firstName: "",
         lastName: "",
-        password: "",
-        confirmPass: ""
+        password: ""
     };
+    private confirmPass = ""
+    private checkPasswordsMatch = true;
+
     constructor(private userService: UserService, private router: Router, private app: AppComponent) { }
 
     register() {
-        this.userService
-            .registerUser(this.userData)
-            .subscribe(
-            userInfo => {
-                this.userService.saveAuthInSession(userInfo)
-                this.router.navigate(['/causes'])
-                this.app.toggleNavigation()
-            },
-            error => this.errorMessage = <any>error
-            );
+        if(this.checkPasswords(this.userData.password, this.confirmPass)){
+            this.userService
+                .registerUser(this.userData)
+                .subscribe(
+                    userInfo => {
+                        this.userService.saveAuthInSession(userInfo)
+                        this.router.navigate(['/causes'])
+                        this.app.toggleNavigation()
+                    },
+                    () => {
+                        this.userExist = true
+                    });
+        }
+        else {
+            this.checkPasswordsMatch = false;
+        }
+    }
+
+    checkPasswords(pass, confPass){
+       return pass == confPass
     }
 }

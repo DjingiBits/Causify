@@ -3,13 +3,14 @@ import { BrowserModule } from '@angular/platform-browser'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { HttpModule } from '@angular/http'
 import { FormsModule, FormBuilder } from '@angular/forms'
-import { RouterModule } from '@angular/router'
+import { RouterModule, CanActivate } from '@angular/router'
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
 import { AppComponent } from './app/app.component'
 import { HomeComponent } from './app/home/home.component'
 import { LoginComponent } from './app/login/login.component'
 import { RegisterComponent } from './app/register/register.component'
+import { UserProfileComponent } from './app/userProfile/userProfile.component'
 import { CausesComponent } from './app/causes/causes.component'
 import { DetailCauseComponent } from './app/detailCause/detail-cause.component'
 import { CreateCauseComponent } from './app/createCause/create-cause.component'
@@ -20,6 +21,8 @@ import { FooterComponent } from './app/footer/footer.component'
 import { UserService } from './services/user.service'
 import { CausesService } from './services/causes.service'
 import { CommentsService } from './services/comments.service'
+import { AppRoutingModule }     from './app/app-routing.module';
+import { AuthGuard } from './app/_guards/auth.guard'
 
 
 @NgModule({
@@ -34,22 +37,13 @@ import { CommentsService } from './services/comments.service'
         PageNotFoundComponent,
         FooterComponent,
         CausesMapComponent,
-        CommentComponent
+        CommentComponent,
+        UserProfileComponent
     ],
-    providers: [FormBuilder, UserService, CausesService, CommentsService],
+    providers: [FormBuilder, UserService, CausesService, CommentsService, AuthGuard ],
     imports: [
         BrowserModule,
-        RouterModule.forRoot([
-            { path: 'home', component: HomeComponent },
-            { path: 'login', component: LoginComponent },
-            { path: 'register', component: RegisterComponent },
-            { path: 'causes', component: CausesComponent },
-            { path: 'cause/:_id', component: DetailCauseComponent },
-            { path: 'createCuase', component: CreateCauseComponent },
-            { path: 'causesMap', component: CausesMapComponent},
-            { path: '', redirectTo: 'home', pathMatch: 'full' },
-            { path: '**', component: PageNotFoundComponent },
-        ]),
+        AppRoutingModule,
         NgbModule.forRoot(),
         FormsModule,
         HttpModule,
