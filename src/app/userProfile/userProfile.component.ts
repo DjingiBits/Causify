@@ -8,7 +8,7 @@ import { Router } from '@angular/router'
     styleUrls: ['app/userProfile/userProfile.component.css']
 })
 
-//TODO: ADD CHAGE PASSWORD FUNCTIONALITY
+//TODO: ADD CHANGE PASSWORD FUNCTIONALITY
 
 export class UserProfileComponent {
 
@@ -33,7 +33,7 @@ export class UserProfileComponent {
              .subscribe(
                  userInfo => {
                      this.user.saveAuthInSession(userInfo)
-                     this.router.navigate(['/causes'])
+                     this.router.navigate(['/userProfile'])
                  },
                  error => this.errorMessage = <any>error
              );
