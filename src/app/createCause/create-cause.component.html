@@ -1,6 +1,6 @@
 <form (ngSubmit)="createCause()">
   <div>
-    <label>Tilte:</label>
+    <label class="input">Title:</label>
     <input type="text"
            [(ngModel)]="causeData.title"
            ngModel minlength="5"
@@ -11,7 +11,7 @@
   </div>
 
   <div>
-    <label>Image:</label>
+    <label class="input">Image:</label>
     <input type="text"
            [(ngModel)]="causeData.imageUrl"
            name="imageUrl"
@@ -19,8 +19,8 @@
            required/>
   </div>
 
-  <div>
-    <label>Description:</label>
+  <div class="box">
+    <label class="input">Description:</label>
     <textarea cols="30" rows="10"
               [(ngModel)]="causeData.description"
               ngModel minlength="20"
@@ -31,14 +31,14 @@
   </div>
 
   <div>
-    <label>Duration:</label>
+    <label class="input">Duration:</label>
     <select>
         <option *ngFor="let key of durations" [value]="key" [label]="posibleDurations[key]"></option>
       </select>
   </div>
 
   <div>
-    <label>Start date:</label>
+    <label class="input">Start date:</label>
     <input type="date"
            [(ngModel)]="causeData.startDate"
            name="title"
@@ -47,7 +47,7 @@
   </div>
 
   <div>
-    <label>Category:</label>
+    <label class="input">Category:</label>
     <select>
         <option *ngFor="let key of categories" [value]="key" [label]="posibleCategories[key]" ></option>
       </select>

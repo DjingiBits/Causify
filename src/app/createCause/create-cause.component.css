@@ -1,0 +1,60 @@
+form{
+
+    text-align: center;
+    background: #fafafa;
+    width: 50%;
+    padding:15px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+
+input[type=text],
+input[type=date]{
+    font: 18px "Open Sans", sans-serif;
+    color: #333333;
+    border:none;
+    border-bottom: 3px solid transparent;
+    transition: .3s ease-in;
+    margin: 10px;
+    background: none;
+}
+
+input[type=text]:focus,
+input[type=date]:focus{
+    border-color: #6699ff;
+    outline:none;
+}
+
+.input{
+    font: 24px "Open Sans", sans-serif;
+    font-weight: 700;
+    color: #333333;
+}
+
+textarea{
+    width: 400px;
+    background: none;
+    border: 3px solid #6699ff;
+    padding: 10px;
+    font: 12px "Open Sans", sans-serif;
+    outline: none;
+}
+
+input[type=submit]{
+    border: 3px solid #333333;
+    border-radius: 20px;
+    padding: 10px 15px;
+    color: #333333;
+    font: 14px "Open Sans", sans-serif;
+    font-weight: 500;
+    background: none;
+    margin: 20px;
+    box-sizing: padding-box;
+}
+
+input[type=submit]:hover{
+    background: #333333;
+    color:white;
+    cursor:pointer;
+}
