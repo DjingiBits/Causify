@@ -1,3 +1,50 @@
-.comment-box{
+div{
+    margin-left: 50px;
+    color: #333333;
+}
 
+form{
+    width: 500px;
+}
+.prompt{
+    font: 18px "Open Sans", sans-serif;
+    font-weight: 800;
+    color: #6699ff;
+}
+
+textarea{
+    width: 400px;
+    background: none;
+    border: 3px solid #6699ff;
+    padding: 10px;
+    font: 12px "Open Sans", sans-serif;
+}
+
+input[type=submit]{
+    border: 3px solid #333333;
+    border-radius: 20px;
+    padding: 10px 15px;
+    color: #333333;
+    font: 14px "Open Sans", sans-serif;
+    font-weight: 500;
+    background: none;
+    float: right;
+    margin: 20px;
+    box-sizing: padding-box;
+    -moz-box-sizing: padding-box;
+    -webkit-box-sizing: padding-box;
+
+}
+
+input[type=submit]:hover{
+    background: #333333;
+    color:white;
+    cursor:pointer;
+}
+
+.comment-box{
+    border-top: 4px solid #333333;
+    border-bottom: 4px solid #333333;
+    width: 40%;
+    padding-left: 10px;
 }

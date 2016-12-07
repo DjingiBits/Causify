@@ -17,7 +17,7 @@ export class CommentsService {
 
     postComment(data) {
         let headers: Headers = new Headers({'Content-Type': 'application/json'})
-        headers.append('Authorization', `Kinvey ${this.authToken}`)
+        headers.append('Authorization', 'Kinvey ' + sessionStorage.getItem('authToken'))
         let options = new RequestOptions({ headers: headers })
 
         return this.http.post(this.dbUrl, JSON.stringify(data), options)
@@ -25,7 +25,7 @@ export class CommentsService {
 
     getComments(causeId : string): Observable<IComment[]> {
         let headers: Headers = new Headers({'Accept': 'application/json'})
-        headers.append('Authorization', `Kinvey ${this.authToken}`)
+        headers.append('Authorization','Kinvey ' + sessionStorage.getItem('authToken'))
         let options = new RequestOptions({ headers: headers })
        // let params: URLSearchParams = new URLSearchParams();
         //params.set("causeId", causeId );

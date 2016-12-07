@@ -1,5 +1,5 @@
 <div class="wrapper" *ngIf="cause">
-
+    <input class="back-btn" type="button" value="Back" (click)="onBack()">
   <h3 class="cause-title">{{cause.title}}</h3>
   <div class="cause-component">
 
@@ -18,6 +18,5 @@
 
   <comment-box [causeId]="cause._id"> </comment-box>
 
-  <input type="button" value="Back" (click)="onBack()">
   <!--TODO add comments-->
 </div>
